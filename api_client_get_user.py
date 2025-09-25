@@ -20,6 +20,5 @@ authentication_user = AuthenticationUserDict(
     password=create_user_request['password']
 )
 private_users_client = get_private_users_client(authentication_user)
-get_user_response = private_users_client.get_user_api(create_user_response['user']['id'])
-get_user_response_data = get_user_response.json()
-print('Get user data:', get_user_response_data)
+get_user_response = private_users_client.get_user(create_user_response['user']['id'])
+print('Get user data:', get_user_response)

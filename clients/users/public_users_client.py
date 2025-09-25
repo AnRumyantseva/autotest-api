@@ -5,6 +5,9 @@ from clients.api_clients import APIClient
 from clients.public_http_builder import get_public_http_client
 
 class User(TypedDict):
+    """
+    Описание структуры пользователя.
+    """
     id: str
     email: str
     lastName: str
@@ -13,6 +16,9 @@ class User(TypedDict):
 
 
 class CreateUserResponseDict(TypedDict):
+    """
+    Описание структуры ответа создания пользователя.
+    """
     user: User
 
 class CreateUserRequestDict(TypedDict):

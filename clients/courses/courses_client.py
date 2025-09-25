@@ -4,6 +4,22 @@ from typing import TypedDict
 
 from clients.private_http_builder import AuthenticationUserDict, get_private_http_client
 from clients.users.private_users_client import PrivateUsersClient
+from clients.users.private_users_client import User
+from clients.files.files_client import File
+
+
+class Course(TypedDict):
+    """
+    Описание структуры курса.
+    """
+    id: str
+    title: str
+    maxScore: int
+    minScore: int
+    description: str
+    previewFile: File  # Вложенная структура файла
+    estimatedTime: str
+    createdByUser: User  # Вложенная структура пользователя
 
 
 class GetCoursesQueryDict(TypedDict):
@@ -11,6 +27,7 @@ class GetCoursesQueryDict(TypedDict):
     Описание структуры запроса на получение списка курсов.
     """
     userId: str
+
 
 class CreateCourseRequestDict(TypedDict):
     """
@@ -24,6 +41,14 @@ class CreateCourseRequestDict(TypedDict):
     previewFileId: str
     createdByUserId: str
 
+
+class CreateCourseResponseDict(TypedDict):
+    """
+    Описание структуры ответа создания курса.
+    """
+    course: Course
+
+
 class UpdateCourseRequestDict(TypedDict):
     """
     Описание структуры запроса на обновление курса.
@@ -34,10 +59,12 @@ class UpdateCourseRequestDict(TypedDict):
     description: str | None
     estimatedTime: str | None
 
+
 class CoursesClient(APIClient):
     """
     Клиент для работы с /api/v1/courses
     """
+
     def get_courses_api(self, query: GetCoursesQueryDict) -> Response:
         """
         Метод получения списка курсов.
@@ -47,7 +74,7 @@ class CoursesClient(APIClient):
         """
         return self.get("/api/v1/courses", params=query)
 
-    def get_course_api(self, course_id:str ) -> Response:
+    def get_course_api(self, course_id: str) -> Response:
         """
         Метод получения курса.
 
@@ -85,11 +112,15 @@ class CoursesClient(APIClient):
         """
         return self.delete(f"/api/v1/courses/{course_id}")
 
+    def create_course(self, request: CreateCourseRequestDict) -> CreateCourseResponseDict:
+        response = self.create_course_api(request)
+        return response.json()
 
-def get_courses_http_client(user: AuthenticationUserDict) -> PrivateUsersClient:
+
+def get_courses_client(user: AuthenticationUserDict) -> PrivateUsersClient:
     """
     Функция создаёт экземпляр CoursesClient с уже настроенным HTTP-клиентом.
 
     :return: Готовый к использованию CoursesClient.
     """
-    return PrivateUsersClient(client=get_private_http_client(user))
+    return CoursesClient(client=get_private_http_client(user))

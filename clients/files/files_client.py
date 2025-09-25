@@ -4,8 +4,6 @@ from clients.api_clients import APIClient
 from typing import TypedDict
 
 from clients.private_http_builder import AuthenticationUserDict, get_private_http_client
-from clients.users.private_users_client import PrivateUsersClient
-
 
 class File(TypedDict):
     """
@@ -68,7 +66,7 @@ class FilesClient(APIClient):
         return response.json()
 
 
-def get_files_client(user: AuthenticationUserDict) -> PrivateUsersClient:
+def get_files_client(user: AuthenticationUserDict) -> FilesClient:
     """
     Функция создаёт экземпляр FilesClient с уже настроенным HTTP-клиентом.
 

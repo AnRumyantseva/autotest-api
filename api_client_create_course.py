@@ -1,4 +1,3 @@
-from clients.courses import courses_client
 from clients.courses.courses_client import get_courses_client, CreateCourseRequestDict
 from clients.files.files_client import get_files_client, CreateFileRequestDict
 from clients.private_http_builder import AuthenticationUserDict
@@ -39,5 +38,5 @@ create_course_request = CreateCourseRequestDict(
     previewFileId=create_file_response['file']['id'],
     createdByUserId=create_user_response['user']['id']
 )
-create_course_response = courses_client.create_course(create_course_request)
+create_course_response = course_client.create_course(create_course_request)
 print('Create course data:', create_course_response)

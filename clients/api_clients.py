@@ -17,7 +17,7 @@ class APIClient:
         """
         return self.client.get(url, params=params)
 
-    def post(self, url: URL | str, json: Any, data: RequestData | None = None,
+    def post(self, url: URL | str, json: Any | None = None, data: RequestData | None = None,
              files: RequestFiles | None = None) -> Response:
         """
         Выполняет POST-запрос.

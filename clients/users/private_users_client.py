@@ -1,8 +1,7 @@
 from httpx import Response
 from typing import TypedDict
 from clients.api_clients import APIClient
-from clients.authentication.authentication_client import AuthenticationClient
-from clients.private_http_builder import AuthenticationUserDict, get_private_http_client
+from clients.private_http_builder import AuthenticationUserSchema, get_private_http_client
 
 
 class UpdateUserRequestDict(TypedDict):
@@ -76,7 +75,7 @@ class PrivateUsersClient(APIClient):
         return response.json()
 
 
-def get_private_users_client(user: AuthenticationUserDict) -> PrivateUsersClient:
+def get_private_users_client(user: AuthenticationUserSchema) -> PrivateUsersClient:
     """
     Функция создаёт экземпляр PrivateUsersClient с уже настроенным HTTP-клиентом.
 

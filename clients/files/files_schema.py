@@ -1,5 +1,6 @@
 from pydantic import BaseModel, HttpUrl
 
+
 class FileSchema(BaseModel):
     """
     Описание структуры файла.

@@ -35,12 +35,12 @@ class CreateCourseRequestSchema(BaseModel):
     model_config = ConfigDict(populate_by_name=True)
 
     title: str
-    max_score: int = Field(alias='maxScore')
-    min_score: int = Field(alias='minScore')
+    max_score: int = Field(alias="maxScore")
+    min_score: int = Field(alias="minScore")
     description: str
-    estimated_time: str = Field(alias='estimatedTime')
-    preview_file_id: FileSchema = Field(alias='previewFileId')  # Вложенная структура файла
-    created_by_user: UserSchema = Field(alias='createdByUser')  # Вложенная структура пользователя
+    estimated_time: str = Field(alias="estimatedTime")
+    preview_file_id: str = Field(alias="previewFileId")
+    created_by_user_id: str = Field(alias="createdByUserId")
 
 
 class CreateCourseResponseSchema(BaseModel):

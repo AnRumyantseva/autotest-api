@@ -8,11 +8,11 @@ from clients.files.files_schema import CreateFileRequestSchema
 from clients.courses.courses_schema import CreateCourseRequestSchema
 from clients.exercises.exercises_schema import CreateExerciseRequestSchema
 
-from tools.fakers import get_random_email
+from tools.fakers import fake
 
 public_users_client = get_public_users_client()
 create_user_request = CreateUserRequestSchema(
-    email=get_random_email(),
+    email=fake.email(),
     password="string123",
     last_name="string123",
     first_name="string123",

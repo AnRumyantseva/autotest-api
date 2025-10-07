@@ -8,7 +8,7 @@ from tools.assertions.users import assert_create_user
 
 
 @pytest.mark.users
-@pytest.mark.regressions
+@pytest.mark.regression
 def test_create_user():
     public_users_client = get_public_users_client()
     request = CreateUserRequestSchema()
@@ -17,3 +17,19 @@ def test_create_user():
     assert_status_code(response.status_code, HTTPStatus.OK)
     assert_create_user(request, response_data)
     validate_json_schema(instance=response.json(), schema=response_data.model_json_schema())
+
+
+@pytest.mark.slow
+@pytest.mark.test
+def test_heavy_calculation():
+    pass
+
+@pytest.mark.integration
+@pytest.mark.test
+def test_integration_with_external_api():
+    pass
+
+@pytest.mark.smoke
+@pytest.mark.test
+def test_quick_check():
+    pass

@@ -12,7 +12,7 @@ class FileSchema(BaseModel):
     directory: str
 
 
-class CreatedFileResponseSchema(BaseModel):
+class CreateFileResponseSchema(BaseModel):
     file: FileSchema
 
 

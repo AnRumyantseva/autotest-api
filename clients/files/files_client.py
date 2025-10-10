@@ -1,7 +1,7 @@
 from httpx import Response
 from clients.api_clients import APIClient
 from clients.private_http_builder import AuthenticationUserSchema, get_private_http_client
-from clients.files.files_schema import CreateFileRequestSchema, CreatedFileResponseSchema
+from clients.files.files_schema import CreateFileRequestSchema, CreateFileResponseSchema
 
 
 class FilesClient(APIClient):
@@ -37,9 +37,9 @@ class FilesClient(APIClient):
         """
         return self.delete(f"/api/v1/files/{file_id}")
 
-    def create_file(self, request: CreateFileRequestSchema) -> CreatedFileResponseSchema:
+    def create_file(self, request: CreateFileRequestSchema) -> CreateFileResponseSchema:
         response = self.create_file_api(request)
-        return CreatedFileResponseSchema.model_validate_json(response.text)
+        return CreateFileResponseSchema.model_validate_json(response.text)
 
 
 def get_files_client(user: AuthenticationUserSchema) -> FilesClient:

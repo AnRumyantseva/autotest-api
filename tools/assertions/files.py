@@ -1,8 +1,10 @@
 import httpx
 
+from clients.errors_schema import ValidationErrorSchema, ValidationErrorResponseSchema
 from clients.files.files_schema import CreateFileRequestSchema, CreateFileResponseSchema, FileSchema, \
     GetFileResponseSchema
 from tools.assertions.basic import assert_equal
+from tools.assertions.errors import assert_validation_error_response
 
 
 def assert_create_file_response(request: CreateFileRequestSchema, response: CreateFileResponseSchema):
@@ -43,6 +45,7 @@ def assert_file(actual: FileSchema, expected: FileSchema):
     assert_equal(actual.filename, expected.filename, 'filename')
     assert_equal(actual.directory, expected.directory, 'directory')
 
+
 def assert_get_file_response(get_file_response: GetFileResponseSchema, create_file_response: CreateFileResponseSchema):
     """
     Проверяет, что ответ на получение файла соответствует ответу на его создание.
@@ -54,3 +57,43 @@ def assert_get_file_response(get_file_response: GetFileResponseSchema, create_fi
     assert_file(get_file_response.file, create_file_response.file)
 
 
+def assert_create_file_with_empty_filename_response(actual: ValidationErrorResponseSchema):
+    """
+    Проверяет, что ответ на создание файла с пустым именем файла соответствует ожидаемой валидационной ошибке.
+
+    :param actual: Ответ от API с ошибкой валидации, который необходимо проверить.
+    :raises AssertionError: Если фактический ответ не соответствует ожидаемому.
+    """
+    expected = ValidationErrorResponseSchema(
+        details=[
+            ValidationErrorSchema(
+                type="string_too_short",  # Тип ошибки, связанной с слишком короткой строкой.
+                input="",  # Пустое имя файла.
+                context={"min_length": 1},  # Минимальная длина строки должна быть 1 символ.
+                message="String should have at least 1 character",  # Сообщение об ошибке.
+                location=["body", "filename"]  # Ошибка возникает в теле запроса, поле "filename".
+            )
+        ]
+    )
+    assert_validation_error_response(actual, expected)
+
+
+def assert_create_file_with_empty_directory_response(actual: ValidationErrorResponseSchema):
+    """
+    Проверяет, что ответ на создание файла с пустым именем файла соответствует ожидаемой валидационной ошибке.
+
+    :param actual: Ответ от API с ошибкой валидации, который необходимо проверить.
+    :raises AssertionError: Если фактический ответ не соответствует ожидаемому.
+    """
+    expected = ValidationErrorResponseSchema(
+        details=[
+            ValidationErrorSchema(
+                type="string_too_short",  # Тип ошибки, связанной с слишком короткой строкой.
+                input="",  # Пустая директория.
+                context={"min_length": 1},  # Минимальная длина строки должна быть 1 символ.
+                message="String should have at least 1 character",  # Сообщение об ошибке.
+                location=["body", "directory"]  # Ошибка возникает в теле запроса, поле "directory".
+            )
+        ]
+    )
+    assert_validation_error_response(actual, expected)

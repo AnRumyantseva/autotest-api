@@ -1,11 +1,14 @@
 from http import HTTPStatus
 
 import pytest
+
+from clients.errors_schema import ValidationErrorResponseSchema
 from clients.files.files_client import FilesClient
 from clients.files.files_schema import CreateFileRequestSchema, CreateFileResponseSchema, GetFileResponseSchema
 from fixtures.files import FileFixture
 from tools.assertions.basic import assert_status_code
-from tools.assertions.files import assert_create_file_response, assert_get_file_response
+from tools.assertions.files import assert_create_file_response, assert_get_file_response, \
+    assert_create_file_with_empty_filename_response, assert_create_file_with_empty_directory_response
 from tools.assertions.schema import validate_json_schema
 
 
@@ -28,3 +31,31 @@ class TestFiles:
         assert_status_code(response.status_code, HTTPStatus.OK)
         assert_get_file_response(response_data, function_file.response)
         validate_json_schema(response.json(), response_data.model_json_schema())
+
+
+    def test_create_file_with_empty_directory(self, files_client: FilesClient):
+        request = CreateFileRequestSchema(
+            directory='',
+            upload_file='/home/anastasiya/PycharmProjects/autotest-api/testdata/files/pick.jpg'
+        )
+        response = files_client.create_file_api(request)
+        response_data = ValidationErrorResponseSchema.model_validate_json(response.text)
+
+        assert_status_code(response.status_code, HTTPStatus.UNPROCESSABLE_ENTITY)
+        assert_create_file_with_empty_directory_response(response_data)
+        validate_json_schema(response.json(), response_data.model_json_schema())
+
+
+
+    def test_create_file_with_empty_filename(self, files_client: FilesClient):
+        request = CreateFileRequestSchema(
+            filename='',
+            upload_file='/home/anastasiya/PycharmProjects/autotest-api/testdata/files/pick.jpg'
+        )
+        response = files_client.create_file_api(request)
+        response_data = ValidationErrorResponseSchema.model_validate_json(response.text)
+
+        assert_status_code(response.status_code, HTTPStatus.UNPROCESSABLE_ENTITY)
+        assert_create_file_with_empty_filename_response(response_data)
+        validate_json_schema(response.json(), response_data.model_json_schema())
+

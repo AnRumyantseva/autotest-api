@@ -1,4 +1,5 @@
 from typing import Any
+
 from pydantic import BaseModel, Field, ConfigDict
 
 
@@ -21,3 +22,12 @@ class ValidationErrorResponseSchema(BaseModel):
     model_config = ConfigDict(populate_by_name=True)
 
     details: list[ValidationErrorSchema] = Field(alias="detail")
+
+
+class InternalErrorResponseSchema(BaseModel):
+    """
+    Модель для описания внутренней ошибки.
+    """
+    model_config = ConfigDict(populate_by_name=True)
+
+    detail: str = Field(alias="detail")

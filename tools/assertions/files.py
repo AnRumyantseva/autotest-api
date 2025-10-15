@@ -1,10 +1,10 @@
 import httpx
 
-from clients.errors_schema import ValidationErrorSchema, ValidationErrorResponseSchema
+from clients.errors_schema import ValidationErrorSchema, ValidationErrorResponseSchema, InternalErrorResponseSchema
 from clients.files.files_schema import CreateFileRequestSchema, CreateFileResponseSchema, FileSchema, \
     GetFileResponseSchema
 from tools.assertions.basic import assert_equal
-from tools.assertions.errors import assert_validation_error_response
+from tools.assertions.errors import assert_validation_error_response, assert_internal_error_response
 
 
 def assert_create_file_response(request: CreateFileRequestSchema, response: CreateFileResponseSchema):
@@ -97,3 +97,13 @@ def assert_create_file_with_empty_directory_response(actual: ValidationErrorResp
         ]
     )
     assert_validation_error_response(actual, expected)
+
+
+def assert_file_not_found_response(actual: InternalErrorResponseSchema):
+    """
+    Функция для проверки ошибки, если файл не найден на сервере.
+    :param actual: Фактический ответ.
+    :raises AssertionError: Если фактический ответ не соответствует ошибке "File not found"
+    """
+    expected = InternalErrorResponseSchema(detail="File not found")
+    assert_internal_error_response(actual, expected)

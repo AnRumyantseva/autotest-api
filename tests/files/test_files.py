@@ -65,7 +65,6 @@ class TestFiles:
         get_response = files_client.get_file_api(function_file.response.file.id)
         get_response_data = InternalErrorResponseSchema.model_validate_json(get_response.text)
         assert_status_code(get_response.status_code, HTTPStatus.NOT_FOUND)
-        print(get_response_data)
         assert_file_not_found_response(get_response_data)
         validate_json_schema(get_response.json(), get_response_data.model_json_schema())
 

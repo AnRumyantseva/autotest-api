@@ -1,6 +1,7 @@
 import allure
 import pytest
 from http import HTTPStatus
+from allure_commons.types import Severity
 from clients.authentication.authentication_client import AuthenticationClient
 from clients.authentication.authentication_schema import LoginRequestSchema, LoginResponseSchema
 from fixtures.users import UserFixture
@@ -20,6 +21,7 @@ from tools.allure.stories import AllureStory
 @allure.feature(AllureFeature.AUTHENTICATION)
 class TestAuthentication:
     @allure.story(AllureStory.LOGIN)
+    @allure.severity(Severity.BLOCKER)
     @allure.title("Login with correct email and password")
     def test_login(self, authentication_client: AuthenticationClient, function_user: UserFixture):
         request_login = LoginRequestSchema(email=function_user.email,

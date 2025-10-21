@@ -18,9 +18,12 @@ from tools.allure.stories import AllureStory
 @pytest.mark.regression
 @allure.tag(AllureTag.REGRESSION, AllureTag.AUTHENTICATION)
 @allure.epic(AllureEpic.LMS)
+@allure.parent_suite(AllureEpic.LMS)
 @allure.feature(AllureFeature.AUTHENTICATION)
+@allure.suite(AllureFeature.AUTHENTICATION)
 class TestAuthentication:
     @allure.story(AllureStory.LOGIN)
+    @allure.sub_suite(AllureStory.LOGIN)
     @allure.severity(Severity.BLOCKER)
     @allure.title("Login with correct email and password")
     def test_login(self, authentication_client: AuthenticationClient, function_user: UserFixture):

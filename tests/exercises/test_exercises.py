@@ -30,7 +30,7 @@ from tools.allure.stories import AllureStory
 class TestExercises:
     @allure.tag(AllureTag.CREATE_ENTITY)
     @allure.story(AllureStory.CREATE_ENTITY)
-    @allure.suitec(AllureStory.CREATE_ENTITY)
+    @allure.suite(AllureStory.CREATE_ENTITY)
     @allure.severity(Severity.BLOCKER)
     @allure.title("Create exercise")
     def test_create_exercise(self, exercise_client: ExercisesClient, function_course: CourseFixture):

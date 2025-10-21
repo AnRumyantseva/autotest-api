@@ -117,6 +117,7 @@ def assert_get_file_with_incorrect_file_id_response(actual: ValidationErrorRespo
     :param actual: Фактический ответ API с ошибкой валидации
     :raises AssertionError: Если фактический ответ не соответствует ожидаемому
     """
+
     expected = ValidationErrorResponseSchema(
         details=[
             ValidationErrorSchema(

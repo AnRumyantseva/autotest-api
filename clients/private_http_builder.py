@@ -5,7 +5,10 @@ from clients.authentication.authentication_schema import LoginRequestSchema
 from pydantic import BaseModel
 from functools import lru_cache
 
-class AuthenticationUserSchema(BaseModel, frozen=True):  # Добавили параметр frozen=True
+from clients.event_hooks import curl_event_hooks
+
+
+class AuthenticationUserSchema(BaseModel, frozen=True):
     email: str
     password: str
 
@@ -16,4 +19,5 @@ def get_private_http_client(user: AuthenticationUserSchema) -> Client:
     login_response = authentication_client.login(login_request)
     return Client(timeout=100,
                   base_url="http://localhost:8000",
-                  headers={"Authorization": f"Bearer {login_response.token.access_token}"})
+                  headers={"Authorization": f"Bearer {login_response.token.access_token}"},
+                  event_hooks={"request": [curl_event_hooks]})

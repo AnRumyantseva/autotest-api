@@ -28,8 +28,8 @@ from tools.allure.stories import AllureStory
 @allure.suite(AllureFeature.COURSES)
 class TestCourses:
     @allure.tag(AllureTag.CREATE_ENTITY)
-    @allure.story(AllureStory.GET_ENTITY)
-    @allure.sub_suite(AllureStory.GET_ENTITY)
+    @allure.story(AllureStory.CREATE_ENTITY)
+    @allure.sub_suite(AllureStory.CREATE_ENTITY)
     @allure.severity(Severity.BLOCKER)
     @allure.title("Create course")
     def test_create_course(self, courses_client: CoursesClient, function_user: UserFixture, function_file: FileFixture):

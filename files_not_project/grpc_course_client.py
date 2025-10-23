@@ -1,0 +1,9 @@
+import grpc
+
+from files_not_project import course_service_pb2, course_service_pb2_grpc
+
+channel = grpc.insecure_channel('localhost:50052')
+stub = course_service_pb2_grpc.CourseServiceStub(channel)
+
+response = stub.GetCourse(course_service_pb2.GetCourseRequest(course_id ="api-course"))
+print(response)

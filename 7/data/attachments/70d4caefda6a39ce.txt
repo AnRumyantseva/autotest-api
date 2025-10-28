@@ -1,0 +1,22 @@
+INFO     HTTP_Client:event_hooks.py:27 Make POST request to http://localhost:8000/api/v1/users
+INFO     HTTP_Client:event_hooks.py:36 Got response 200 OK from http://localhost:8000/api/v1/users
+INFO     HTTP_Client:event_hooks.py:27 Make POST request to http://localhost:8000/api/v1/authentication/login
+INFO     HTTP_Client:event_hooks.py:36 Got response 200 OK from http://localhost:8000/api/v1/authentication/login
+INFO     HTTP_Client:event_hooks.py:27 Make POST request to http://localhost:8000/api/v1/files
+INFO     HTTP_Client:event_hooks.py:36 Got response 200 OK from http://localhost:8000/api/v1/files
+INFO     HTTP_Client:event_hooks.py:27 Make POST request to http://localhost:8000/api/v1/courses
+INFO     HTTP_Client:event_hooks.py:36 Got response 200 OK from http://localhost:8000/api/v1/courses
+INFO     HTTP_Client:event_hooks.py:27 Make POST request to http://localhost:8000/api/v1/exercises
+INFO     HTTP_Client:event_hooks.py:36 Got response 200 OK from http://localhost:8000/api/v1/exercises
+INFO     HTTP_Client:event_hooks.py:27 Make PATCH request to http://localhost:8000/api/v1/exercises/73d07ee8-62ae-4fee-a48c-2127bbfc1b77
+INFO     HTTP_Client:event_hooks.py:36 Got response 200 OK from http://localhost:8000/api/v1/exercises/73d07ee8-62ae-4fee-a48c-2127bbfc1b77
+INFO     BASE_ASSERTIONS:basic.py:16 Check that response status code equals to 200
+INFO     EXERCISES_ASSERTIONS:exercises.py:75 Check update exercise response
+INFO     BASE_ASSERTIONS:basic.py:32 Check that title equals to Water by despite food force.
+INFO     BASE_ASSERTIONS:basic.py:32 Check that max_score equals to 60
+INFO     BASE_ASSERTIONS:basic.py:32 Check that min_score equals to 6
+INFO     BASE_ASSERTIONS:basic.py:32 Check that order_index equals to 34
+INFO     BASE_ASSERTIONS:basic.py:32 Check that description equals to Goal house available.
+Walk different medical. Hospital customer however anything. Eat lose everything station know business account.
+INFO     BASE_ASSERTIONS:basic.py:32 Check that estimated_time equals to 5 weeks
+INFO     SCHEMA_ASSERTIONS:schema.py:20 Validate JSON schema

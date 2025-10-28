@@ -1,0 +1,11 @@
+curl -X 'POST' \
+ http://localhost:8000/api/v1/courses \
+ -H 'host: localhost:8000' \
+ -H 'accept: */*' \
+ -H 'accept-encoding: gzip, deflate' \
+ -H 'connection: keep-alive' \
+ -H 'user-agent: python-httpx/0.28.1' \
+ -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEwLTI4VDEwOjEzOjIyLjM0Mjc0MiIsInVzZXJfaWQiOiJlOWI2YjlkOC0yZDFlLTRjMDAtYTczOC02MDUxMTUxODJlYzgifQ.HKZPhQFKf-uH_ZyfBHfDDbCSQgBxkZHktQaZKISfXGY' \
+ -H 'content-length: 362' \
+ -H 'content-type: application/json' \
+ -d '{"title":"Cost probably unit information.","maxScore":52,"minScore":28,"description":"Suffer institution great reach laugh challenge in fight. Keep improve meet scene address phone three. Seven world chair box traditional.","estimatedTime":"7 weeks","previewFileId":"523f122b-a79b-4be8-a483-9943ad4dcc3a","createdByUserId":"e9b6b9d8-2d1e-4c00-a738-605115182ec8"}'

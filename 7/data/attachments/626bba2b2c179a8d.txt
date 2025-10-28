@@ -1,0 +1,11 @@
+curl -X 'POST' \
+ http://localhost:8000/api/v1/exercises \
+ -H 'host: localhost:8000' \
+ -H 'accept: */*' \
+ -H 'accept-encoding: gzip, deflate' \
+ -H 'connection: keep-alive' \
+ -H 'user-agent: python-httpx/0.28.1' \
+ -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEwLTI4VDEwOjEzOjI1LjE2MDkxOCIsInVzZXJfaWQiOiJiNmYwNzVmMS1kNWFjLTRhODItYTRmYy00MzMwY2M1ZjNiZGEifQ.ZJKkvZz2Cmry_Am1p3UhRWdNPPakFCI1Dwxu3lEMmdk' \
+ -H 'content-length: 316' \
+ -H 'content-type: application/json' \
+ -d '{"title":"Reduce Congress travel.","courseId":"446e3c8a-4cd0-44c4-a400-3a225e3774f2","maxScore":59,"minScore":26,"orderIndex":78,"description":"Argue consumer nothing. South far race would. Ok pull whom everyone program.\nPolicy nice school push. All yet include night protect back city.","estimatedTime":"10 weeks"}'

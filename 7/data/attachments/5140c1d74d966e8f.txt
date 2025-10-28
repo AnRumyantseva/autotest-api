@@ -1,0 +1,11 @@
+curl -X 'POST' \
+ http://localhost:8000/api/v1/courses \
+ -H 'host: localhost:8000' \
+ -H 'accept: */*' \
+ -H 'accept-encoding: gzip, deflate' \
+ -H 'connection: keep-alive' \
+ -H 'user-agent: python-httpx/0.28.1' \
+ -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEwLTI4VDEwOjEzOjIzLjMwMTAzOCIsInVzZXJfaWQiOiJiZjY5ZjJmMC0yNTFmLTQyZjktYmFhNy1hZjE0MDlmMTlkNGYifQ.VZgihtPXAqmzp7VqcTghIyHMRZ9gMNyfVZ2WXehJpes' \
+ -H 'content-length: 420' \
+ -H 'content-type: application/json' \
+ -d '{"title":"Rise far attack often issue baby.","maxScore":86,"minScore":4,"description":"Word support save before statement court. Blood west room water human.\nField feeling financial cost we. Couple executive pass moment. Board concern activity election more. Weight PM meet stay.","estimatedTime":"4 weeks","previewFileId":"72870edb-df9c-437f-a52c-deafd7e74c79","createdByUserId":"bf69f2f0-251f-42f9-baa7-af1409f19d4f"}'

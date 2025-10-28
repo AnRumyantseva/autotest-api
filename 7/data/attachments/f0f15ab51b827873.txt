@@ -1,0 +1,11 @@
+curl -X 'POST' \
+ http://localhost:8000/api/v1/courses \
+ -H 'host: localhost:8000' \
+ -H 'accept: */*' \
+ -H 'accept-encoding: gzip, deflate' \
+ -H 'connection: keep-alive' \
+ -H 'user-agent: python-httpx/0.28.1' \
+ -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEwLTI4VDEwOjEzOjI2LjUyNzY5OCIsInVzZXJfaWQiOiI3OTI5YTczOC01YmUzLTQxYzMtOTljZi1iNjIwMjE5NzFkMzgifQ.8KDDwIi2RpmwScLIXbTJxC7hM7z0SKxgYmP4Yvl_PFE' \
+ -H 'content-length: 311' \
+ -H 'content-type: application/json' \
+ -d '{"title":"Crime region response son.","maxScore":90,"minScore":14,"description":"Book have whole yard be outside go. Approach radio name conference. Mr money police human.","estimatedTime":"3 weeks","previewFileId":"53a0ee41-f59e-412e-8a59-8ffcc797f14b","createdByUserId":"7929a738-5be3-41c3-99cf-b62021971d38"}'

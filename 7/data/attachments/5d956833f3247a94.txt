@@ -1,0 +1,24 @@
+INFO     HTTP_Client:event_hooks.py:27 Make POST request to http://localhost:8000/api/v1/users
+INFO     HTTP_Client:event_hooks.py:36 Got response 200 OK from http://localhost:8000/api/v1/users
+INFO     HTTP_Client:event_hooks.py:27 Make POST request to http://localhost:8000/api/v1/authentication/login
+INFO     HTTP_Client:event_hooks.py:36 Got response 200 OK from http://localhost:8000/api/v1/authentication/login
+INFO     HTTP_Client:event_hooks.py:27 Make POST request to http://localhost:8000/api/v1/files
+INFO     HTTP_Client:event_hooks.py:36 Got response 200 OK from http://localhost:8000/api/v1/files
+INFO     HTTP_Client:event_hooks.py:27 Make POST request to http://localhost:8000/api/v1/courses
+INFO     HTTP_Client:event_hooks.py:36 Got response 200 OK from http://localhost:8000/api/v1/courses
+INFO     HTTP_Client:event_hooks.py:27 Make POST request to http://localhost:8000/api/v1/exercises
+INFO     HTTP_Client:event_hooks.py:36 Got response 200 OK from http://localhost:8000/api/v1/exercises
+INFO     HTTP_Client:event_hooks.py:27 Make GET request to http://localhost:8000/api/v1/exercises/ad8757e7-87f3-4db2-bd5d-bad4b8985fd4
+INFO     HTTP_Client:event_hooks.py:36 Got response 200 OK from http://localhost:8000/api/v1/exercises/ad8757e7-87f3-4db2-bd5d-bad4b8985fd4
+INFO     BASE_ASSERTIONS:basic.py:16 Check that response status code equals to 200
+INFO     EXERCISES_ASSERTIONS:exercises.py:62 Check get exercise response
+INFO     EXERCISES_ASSERTIONS:exercises.py:41 Check exercise
+INFO     BASE_ASSERTIONS:basic.py:32 Check that id equals to ad8757e7-87f3-4db2-bd5d-bad4b8985fd4
+INFO     BASE_ASSERTIONS:basic.py:32 Check that title equals to Decide see like case.
+INFO     BASE_ASSERTIONS:basic.py:32 Check that course_id equals to 9b3c6bcd-954f-42d2-9e54-a0a8384f488e
+INFO     BASE_ASSERTIONS:basic.py:32 Check that max_score equals to 79
+INFO     BASE_ASSERTIONS:basic.py:32 Check that min_score equals to 23
+INFO     BASE_ASSERTIONS:basic.py:32 Check that order_index equals to 78
+INFO     BASE_ASSERTIONS:basic.py:32 Check that description equals to Chance include nothing try what too listen. Blue lawyer media. Wait lead agency build. Cell audience lot music traditional site true military.
+INFO     BASE_ASSERTIONS:basic.py:32 Check that estimated_time equals to 10 weeks
+INFO     SCHEMA_ASSERTIONS:schema.py:20 Validate JSON schema

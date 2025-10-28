@@ -1,0 +1,11 @@
+curl -X 'POST' \
+ http://localhost:8000/api/v1/courses \
+ -H 'host: localhost:8000' \
+ -H 'accept: */*' \
+ -H 'accept-encoding: gzip, deflate' \
+ -H 'connection: keep-alive' \
+ -H 'user-agent: python-httpx/0.28.1' \
+ -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEwLTI4VDEwOjEzOjI0LjU0MTM0MSIsInVzZXJfaWQiOiI1YzBiNjVjNC1kMWRlLTQ1ZjItYjdjOC1mNTlkYmYzNTA2YzcifQ.SYbxbRA7S1ky5OygvhS2_kEUl9aUMsC6EAevCcMNadA' \
+ -H 'content-length: 392' \
+ -H 'content-type: application/json' \
+ -d '{"title":"Tonight least image film forward challenge.","maxScore":85,"minScore":14,"description":"Charge beyond event. Team nice capital us.\nUpon computer food computer base task painting. Activity stay million where once drop. Dream remain find look.","estimatedTime":"3 weeks","previewFileId":"31538a56-6daa-40ad-811a-bffb49baba63","createdByUserId":"5c0b65c4-d1de-45f2-b7c8-f59dbf3506c7"}'

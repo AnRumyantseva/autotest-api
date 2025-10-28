@@ -1,0 +1,11 @@
+curl -X 'POST' \
+ http://localhost:8000/api/v1/exercises \
+ -H 'host: localhost:8000' \
+ -H 'accept: */*' \
+ -H 'accept-encoding: gzip, deflate' \
+ -H 'connection: keep-alive' \
+ -H 'user-agent: python-httpx/0.28.1' \
+ -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEwLTI4VDEwOjEzOjI1Ljc2NzQ0OCIsInVzZXJfaWQiOiIwZGMyZjVmYi04MTg5LTQ1ZDktYjIyNS1kZmU0MTI5ZGE3MzYifQ.snabdQg50criuDnjaRsE_e3xCoVpTuQFmkv7aF5VXww' \
+ -H 'content-length: 313' \
+ -H 'content-type: application/json' \
+ -d '{"title":"Decide see like case.","courseId":"9b3c6bcd-954f-42d2-9e54-a0a8384f488e","maxScore":79,"minScore":23,"orderIndex":78,"description":"Chance include nothing try what too listen. Blue lawyer media. Wait lead agency build. Cell audience lot music traditional site true military.","estimatedTime":"10 weeks"}'

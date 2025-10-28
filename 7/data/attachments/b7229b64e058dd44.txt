@@ -1,0 +1,11 @@
+curl -X 'POST' \
+ http://localhost:8000/api/v1/courses \
+ -H 'host: localhost:8000' \
+ -H 'accept: */*' \
+ -H 'accept-encoding: gzip, deflate' \
+ -H 'connection: keep-alive' \
+ -H 'user-agent: python-httpx/0.28.1' \
+ -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEwLTI4VDEwOjEzOjI1Ljc2NzQ0OCIsInVzZXJfaWQiOiIwZGMyZjVmYi04MTg5LTQ1ZDktYjIyNS1kZmU0MTI5ZGE3MzYifQ.snabdQg50criuDnjaRsE_e3xCoVpTuQFmkv7aF5VXww' \
+ -H 'content-length: 431' \
+ -H 'content-type: application/json' \
+ -d '{"title":"Two rather party seven hotel organization.","maxScore":67,"minScore":20,"description":"Official year local song. Oil pretty tell suddenly down.\nArm tough someone national husband magazine. Artist believe voice knowledge them listen. Although however class spend big international.","estimatedTime":"9 weeks","previewFileId":"e8e7155c-0de9-4a39-a8ee-ce4138b201ed","createdByUserId":"0dc2f5fb-8189-45d9-b225-dfe4129da736"}'

@@ -28,7 +28,7 @@ class Settings(BaseSettings):
 
     @classmethod
     def initialize(cls):
-        allure_results_dir = DirectoryPath("/home/anastasiya/PycharmProjects/autotest-api/allure-results")
+        allure_results_dir = DirectoryPath("./autotest-api/allure-results") #/home/anastasiya/PycharmProjects/
         allure_results_dir.mkdir(exist_ok=True)
         return Settings(allure_results_dir=allure_results_dir)
 
